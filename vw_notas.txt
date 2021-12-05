@@ -1,0 +1,14 @@
+CREATE VIEW vw_notas AS
+SELECT
+documentos.id as id_documento
+,documento_notas.id as id_nota
+,documento_notas.nota
+,catalogo_usuarios.nombre as usuario
+,documento_notas.nota
+,documento_notas.fecha
+FROM documento_notas
+
+LEFT JOIN documentos ON 
+documento_notas.id_documento = documentos.id
+LEFT JOIN catalogo_usuarios ON 
+documento_notas.id_usuario = catalogo_usuarios.id
